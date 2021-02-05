@@ -1,0 +1,105 @@
+.btn {
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  padding: $btn-padding;
+  border-width: $btn-border-width;
+  border-style: solid;
+  min-width: $btn-min-width;
+  border-radius: $btn-radius;
+  font-size: 0.9em;
+  font-weight: $font-weight-semibold;
+  line-height: line-height(base);
+  transition: $default-transition;
+
+  &-primary {
+    @include button-theme(theme-color(secondary), theme-color(primary));
+    &:hover,
+    &:focus,
+    &.focus,
+    &.active {
+      @include button-theme(theme-color(primary), theme-color(secondary));
+    }
+  }
+
+  &-secondary {
+    @include button-theme(theme-color(primary), theme-color(secondary));
+    &:hover,
+    &:focus,
+    &.focus,
+    &.active {
+      @include button-theme(theme-color(secondary), theme-color(primary));
+    }
+  }
+
+  &:focus,
+  &.focus,
+  &.active {
+    outline: 0;
+    box-shadow: none;
+  }
+
+  &-small {
+    min-width: $btn-min-width/2;
+    padding: $btn-padding-small;
+  }
+
+  &-submit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 0 gutter(xs);
+    margin: 0;
+    color: theme-color(primary-light);
+    z-index: 4;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      color: theme-color(primary);
+    }
+    span {
+      display: none;
+    }
+    svg {
+      transition: $default-transition;
+      width: $btn-submit-icon-size;
+      height: $btn-submit-icon-size;
+      fill: currentColor;
+    }
+  }
+}
+
+.section {
+  &:nth-child(2n + 1) {
+    .btn {
+      &-primary {
+        &:hover,
+        &:focus,
+        &.focus,
+        &.active {
+          @include button-theme(
+            theme-color(primary),
+            theme-color(alternative-background)
+          );
+        }
+      }
+
+      &-secondary {
+        &:hover,
+        &:focus,
+        &.focus,
+        &.active {
+          @include button-theme(theme-color(secondary), theme-color(primary));
+        }
+      }
+    }
+  }
+}

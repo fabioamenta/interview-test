@@ -1,0 +1,94 @@
+/*--------------------------------------------------------------
+  # Footer
+  --------------------------------------------------------------*/
+.footer {
+  font-size: 0.75em;
+  background-color: theme-color(tertiary);
+  color: theme-color(primary-light);
+
+  > [class*="container"] {
+    @extend .external-pad;
+    padding-top: gutter(m);
+    padding-bottom: gutter(m);
+    @include screen(md) {
+      padding-top: gutter(xl);
+      padding-bottom: gutter(xl);
+    }
+  }
+
+  .footer-title {
+    color: theme-color(secondary);
+    font-size: font-size(l);
+    line-height: line-height(m);
+    font-weight: $font-weight-semibold;
+    margin-bottom: gutter(base);
+  }
+
+  .footer-subtitle {
+    color: theme-color(secondary);
+    font-size: font-size(s);
+    font-weight: $font-weight-semibold;
+    margin-bottom: gutter(s);
+    flex-basis: 100%;
+  }
+
+  .flex-column {
+    flex-basis: 88%;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0 0 gutter(base);
+    flex-wrap: nowrap;
+
+    ul {
+      margin-top: gutter(base);
+    }
+
+    li {
+      margin-bottom: gutter(s);
+    }
+    padding: 0;
+
+    [class*="fa-"] {
+      flex: 0 0 $footer-icon-width;
+      display: inline-flex;
+      padding-top: gutter(xxs);
+    }
+
+    &.social {
+      flex-wrap: wrap;
+      li {
+        display: inline-block;
+        margin-right: gutter(s);
+      }
+    }
+
+    &.payments {
+      margin: gutter(base) 0;
+      display: flex;
+      justify-content: space-between;
+      flex-flow: row wrap;
+
+      li {
+        display: inline-flex;
+        flex: 1 1 30%;
+        max-width: 30%;
+        height: 36px;
+        background-color: theme-color(secondary);
+        align-items: center;
+        justify-content: center;
+        border-radius: $border-radius-default;
+      }
+    }
+  }
+
+  .nav-link {
+    padding: 0;
+    display: inline-flex;
+  }
+
+  a {
+    transition: $default-transition;
+  }
+}

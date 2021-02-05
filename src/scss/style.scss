@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "components/fontawesome/fontawesome.scss";
+@import "components/fontawesome/regular.scss";
+@import "components/fontawesome/solid.scss";
+@import "components/fontawesome/brands.scss";
+@import "components/fontawesome/light.scss";
+
+@import "global/settings";
+@import "global/mixins";
+@import "global/functions";
+@import "global/default-style";
+@import "global/grid-layout";
+
+@import "components/topbar";
+@import "components/header";
+@import "components/footer";
+@import "components/bottombar";
+@import "components/overlay";
+@import "components/navbar";
+@import "components/form";
+@import "components/sections";
+@import "components/top-categories";
+@import "components/buttons";
+@import "components/cards";
+@import "components/media";
+@import "components/sidebar";
+@import "components/product-list";
+@import "components/filters";
+@import "components/slider";
+@import "components/pagination";
+@import "components/toolbar";

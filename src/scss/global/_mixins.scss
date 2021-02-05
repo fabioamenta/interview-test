@@ -1,0 +1,40 @@
+@mixin abs-center($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+/// Mixin to manage responsive breakpoints
+/// @author Hugo Giraudel
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $custom-grid-breakpoints
+@mixin screen($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($custom-grid-breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media (min-width: map-get($custom-grid-breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($grid-breakpoints)}.";
+  }
+}
+
+@mixin button-theme($color, $bg-color) {
+  color: $color;
+  border-color: $color;
+  background-color: $bg-color;
+}

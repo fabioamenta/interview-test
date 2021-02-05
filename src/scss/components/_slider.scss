@@ -1,0 +1,59 @@
+/*--------------------------------------------------------------
+  # Slider
+  --------------------------------------------------------------*/
+
+.slider {
+  width: 100%;
+  margin: gutter(base) 0;
+  max-width: $slider-max-width;
+}
+
+input[type="range"] {
+  -webkit-appearance: none !important; /*Needed to reset default slider styles */
+  width: 100%;
+  height: $slider-bar-height;
+  background-color: theme-color(tertiary);
+  border-radius: $border-radius-default;
+  margin: auto;
+  transition: $default-transition;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background-color: lighten(theme-color(tertiary), 5%);
+  }
+  &:active + #rangevalue {
+    box-shadow: none;
+  }
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  width: $slider-thumb-size;
+  height: $slider-thumb-size;
+  background-color: theme-color(primary-highlight);
+  border-radius: 100%;
+  box-shadow: 0px 0px 3px darken(theme-color(primary-highlight), 15%);
+  transition: all 0.5s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken(theme-color(primary-highlight), 10%);
+  }
+
+  &:active {
+    box-shadow: 0px 0px 1px darken(theme-color(primary-highlight), 15%);
+  }
+}
+
+input[type="range"] + output {
+  text-align: center;
+  font-size: font-size(s);
+  padding: 10px 0px;
+  width: 100%;
+  color: theme-color(primary-highlight);
+  &::after {
+    content: "\20AC";
+    display: inline-block;
+  }
+}

@@ -1,0 +1,44 @@
+/*--------------------------------------------------------------
+  # Pagination
+  --------------------------------------------------------------*/
+.pagination {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-link {
+  color: theme-color(text-default);
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    color: theme-color(primary-highlight);
+    background-color: transparent;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.page-item {
+  &:first-child,
+  &:last-child {
+    .page-link {
+      font-size: 0.8em;
+    }
+  }
+
+  &.active .page-link {
+    color: theme-color(primary-highlight);
+    background-color: transparent;
+  }
+
+  &.disabled .page-link {
+    color: theme-color(placeholder);
+    background-color: transparent;
+  }
+}

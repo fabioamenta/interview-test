@@ -1,0 +1,43 @@
+/*--------------------------------------------------------------
+  # Form
+  --------------------------------------------------------------*/
+::placeholder {
+  color: theme-color(placeholder);
+}
+
+input {
+  border-color: theme-color(primary-light);
+}
+
+.form-control {
+  padding: gutter(base) gutter(s);
+  font-size: 0.9em;
+}
+
+.subscribe-form {
+  position: relative;
+  .form-control {
+    padding-right: calc(#{$btn-submit-icon-size} + #{gutter(base)});
+    &,
+    & + .btn-submit {
+      color: theme-color(primary-light);
+    }
+    &:hover,
+    &:focus {
+      &,
+      & + [class^="btn-"] {
+        color: theme-color(primary);
+      }
+    }
+  }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  cursor: pointer;
+
+  & + label {
+    margin-left: gutter(xs);
+    cursor: pointer;
+  }
+}

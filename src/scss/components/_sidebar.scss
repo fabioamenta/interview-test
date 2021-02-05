@@ -1,0 +1,29 @@
+/*--------------------------------------------------------------
+  # Sidebar
+  --------------------------------------------------------------*/
+.sidebar {
+  @include screen(lg) {
+    box-shadow: 10px 0 10px -10px rgba(theme-color(tertiary), 0.15);
+  }
+  padding: gutter(base);
+  transition: $default-transition;
+  opacity: 0;
+  &.show {
+    opacity: 1;
+  }
+
+  &-title {
+    color: theme-color(tertiary);
+    font-size: font-size(m);
+    &:not(:first-of-type) {
+      margin-top: gutter(base);
+    }
+    &::after {
+      content: "";
+      display: block;
+      width: 20%;
+      margin: gutter(xs);
+      border-bottom: 2px solid theme-color(tertiary);
+    }
+  }
+}

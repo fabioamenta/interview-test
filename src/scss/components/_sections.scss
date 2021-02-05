@@ -1,0 +1,61 @@
+/*--------------------------------------------------------------
+  # Overlay
+  --------------------------------------------------------------*/
+
+main {
+  &,
+  > .section {
+    > [class*="container"] {
+      @extend .external-pad;
+      padding-top: gutter(s);
+      padding-bottom: gutter(m);
+      @include screen(md) {
+        padding-top: gutter(m);
+        padding-bottom: gutter(l);
+      }
+    }
+  }
+
+  .section {
+    background-color: theme-color(default-background);
+    &:nth-child(2n) {
+      background-color: theme-color(alternative-background);
+    }
+    > [class*="container"] {
+      padding-top: gutter(l);
+      padding-bottom: gutter(l);
+      @include screen(md) {
+        padding-top: gutter(l) * 2;
+        padding-bottom: gutter(l) * 2;
+      }
+    }
+
+    &-header,
+    &-footer {
+      text-align: center;
+    }
+
+    &-footer {
+      margin-top: gutter(l) * 2;
+      margin-bottom: gutter(m) * 2;
+    }
+
+    &-title {
+      font-size: font-size(xxxl);
+
+      &::after {
+        content: "";
+        display: block;
+        max-width: 55px;
+        margin: gutter(base) auto;
+        border-top: 1px solid theme-color(primary);
+      }
+    }
+
+    &-subtitle {
+      display: block;
+      margin-bottom: gutter(m);
+      color: theme-color(text-light);
+    }
+  }
+}

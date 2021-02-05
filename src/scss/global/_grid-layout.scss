@@ -1,0 +1,63 @@
+/*--------------------------------------------------------------
+  # Sidebar
+  --------------------------------------------------------------*/
+
+.grid {
+  &-layout {
+    display: flex;
+    flex-flow: column nowrap;
+
+    @include screen(md) {
+      display: grid;
+      grid-template-columns: 0.8fr 4fr;
+      grid-template-areas:
+        "header header"
+        "sidebar content"
+        ". footer";
+      grid-gap: gutter(base);
+    }
+
+    .grid-layout {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: start;
+      @include screen(md) {
+        display: grid;
+        grid-gap: gutter(s);
+        grid-template-columns: repeat($products-max-item-md, 1fr);
+        header {
+          grid-column-end: $products-max-item-md + 1;
+          grid-column-start: 1;
+        }
+      }
+      @include screen(lg) {
+        grid-template-columns: repeat($products-max-item-lg, 1fr);
+        header {
+          grid-column-end: $products-max-item-lg + 1;
+        }
+      }
+      @include screen(xl) {
+        grid-template-columns: repeat($products-max-item-xl, 1fr);
+        header {
+          grid-column-end: $products-max-item-xl + 1;
+        }
+      }
+    }
+  }
+
+  &-content {
+    grid-area: content;
+  }
+
+  &-sidebar {
+    grid-area: sidebar;
+  }
+
+  &-header {
+    grid-area: header;
+  }
+
+  &-footer {
+    grid-area: footer;
+  }
+}

@@ -1,0 +1,102 @@
+// Grid breakpoints
+$custom-grid-breakpoints: (
+  "xs": 0,
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "lg-p": 1200px,
+  "xl": 1440px,
+  "xxl": 1980px
+) !default;
+
+// Color settings
+$theme-colors: (
+  "primary": #000,
+  "tertiary": #293341,
+  "tertiary-dark": #1c222c,
+  "secondary": #ffffff,
+  "placeholder": #878787,
+  "primary-light": #cbcbcb,
+  "primary-highlight": #16d0e1,
+  "secondary-highlight": #ff3d00,
+  "default-background": #ffffff,
+  "text-default": #222222,
+  "text-light": #878787,
+  "alternative-background": #f5f9fa
+);
+
+// Typography
+$font-family-default: "Poppins", sans-serif;
+$font-sizes: (
+  "xxs": 0.8rem,
+  "xs": 1.1rem,
+  "s": 1.4rem,
+  "base": 1.6rem,
+  "m": 1.7rem,
+  "l": 2rem,
+  "xl": 2.2rem,
+  "xxl": 2.5rem,
+  "xxxl": 3rem
+);
+
+$max-lines: 3;
+
+$lines-height: (
+  "xs": 1.7rem,
+  "s": 2rem,
+  "base": 2.3rem,
+  "m": 2.7rem,
+  "l": 3rem,
+  "xl": 3.2rem
+);
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+
+// Buttons
+$btn-padding: 12px 45px;
+$btn-padding-small: 8px 24px;
+$btn-border-width: 0;
+$btn-min-width: 155px;
+$btn-radius: 0;
+$btn-submit-icon-size: 12px;
+
+// Range Slider
+$slider-bar-height: 2px;
+$slider-thumb-size: $slider-bar-height * 8;
+$slider-max-width: 300px;
+
+// General gutters
+$gutters: (
+  "xxs": 0.4rem,
+  "xs": 0.8rem,
+  "s": 1rem,
+  "base": 1.5rem,
+  "m": 2rem,
+  "l": 3rem,
+  "xl": 4rem,
+  "xxl": 5rem
+);
+
+$border-radius-default: 3px;
+
+// Header
+$logo-height: 77px;
+$logo-width: 110px;
+
+// Footer
+$footer-icon-width: 15px;
+
+// Grid layout for products
+$products-max-item: 1;
+$products-max-item-md: 2;
+$products-max-item-lg: 3;
+$products-max-item-xl: 4;
+
+// Transitions
+$default-transition: all 0.35s cubic-bezier(0, 0, 0.44, 1.18);
+
+// Toolbar
+$toolbar-height: 65px;

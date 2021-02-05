@@ -1,0 +1,67 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+html {
+  font-size: 58%; // 10px
+  @include screen(md) {
+    font-size: 62.5%; // 10px
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: $font-family-default;
+  font-size: font-size(base); // 15px
+  line-height: line-height(base); // 23px
+  color: theme-color("text-default");
+  background-color: theme-color("default-background");
+  font-weight: $font-weight-regular;
+}
+
+a {
+  & {
+    color: inherit;
+    &:hover,
+    &:focus,
+    &:active {
+      color: theme-color("primary-highlight");
+    }
+  }
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+  font-weight: $font-weight-semibold;
+}
+
+.external-pad {
+  padding-left: gutter(m);
+  padding-right: gutter(m);
+  @include screen(md) {
+    padding-left: gutter(xl);
+    padding-right: gutter(xl);
+  }
+}
+
+.dropdown-toggle::after {
+  vertical-align: middle;
+}

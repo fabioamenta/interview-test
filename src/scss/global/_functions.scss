@@ -1,0 +1,14 @@
+// Retrieve gutter Sass maps
+@function gutter($key: "base") {
+  @return map-get($gutters, $key);
+}
+
+// Retrieve font-size Sass maps
+@function font-size($key: "base") {
+  @return map-get($font-sizes, $key);
+}
+
+// Retrieve font-size Sass maps
+@function line-height($key: "base") {
+  @return map-get($lines-height, $key);
+}

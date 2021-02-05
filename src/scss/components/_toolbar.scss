@@ -1,0 +1,54 @@
+/*--------------------------------------------------------------
+  # Toolbar
+  --------------------------------------------------------------*/
+.toolbar {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 6;
+  background-color: theme-color(secondary);
+  transition: $default-transition;
+  width: 100%;
+  height: $toolbar-height;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: gutter(xs);
+  box-shadow: 0 0 9px rgba(0, 0, 0, 0.12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .navbar-nav {
+    .nav-item {
+      margin: 0 gutter(xs);
+      .nav-link {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        i {
+          font-size: font-size(l);
+        }
+      }
+    }
+  }
+  @include screen(md) {
+    display: none;
+  }
+
+  .cart {
+    i {
+      position: relative;
+      .badge {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: -#{gutter(xs)};
+        margin-right: -#{gutter(xs)};
+        padding: gutter(xxs);
+        font-size: font-size(xs);
+        font-family: $font-family-default;
+      }
+    }
+  }
+}

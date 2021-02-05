@@ -1,0 +1,27 @@
+/*--------------------------------------------------------------
+  # Overlay
+  --------------------------------------------------------------*/
+
+.overlay {
+  display: none;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  background-color: rgba(theme-color(primary), 0.7);
+  transition: all 0.5s ease-in-out;
+
+  &.open {
+    display: block;
+    opacity: 1;
+    @include screen(lg-p) {
+      display: none;
+      opacity: 0;
+    }
+  }
+}

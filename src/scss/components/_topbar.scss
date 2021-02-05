@@ -1,0 +1,58 @@
+/*--------------------------------------------------------------
+  # Top Bar
+  --------------------------------------------------------------*/
+.topbar {
+  background-color: theme-color("tertiary");
+  color: theme-color("secondary");
+  font-size: font-size(s);
+  padding-top: gutter(base);
+  padding-bottom: gutter(base);
+
+  [class*="container"] {
+    @extend .external-pad;
+  }
+
+  .nav {
+    flex-wrap: nowrap;
+    .nav-item {
+      white-space: nowrap;
+    }
+  }
+
+  .promo-box {
+    text-align: center;
+    color: theme-color("primary-highlight");
+    display: inline-block;
+    max-width: 45%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: font-size(s);
+  }
+
+  .flag {
+    width: 32px;
+    width: 18px;
+  }
+}
+
+.extra-info {
+  display: flex;
+  align-items: center;
+
+  &-link {
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 0 gutter(xs);
+  }
+}

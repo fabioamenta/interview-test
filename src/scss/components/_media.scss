@@ -1,0 +1,29 @@
+/*--------------------------------------------------------------
+  # Media
+  --------------------------------------------------------------*/
+.media {
+  margin-bottom: gutter(m);
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include screen(lg) {
+    margin-bottom: 0;
+  }
+
+  &-icon {
+    font-size: font-size(base) * 3;
+    color: theme-color(primary-highlight);
+  }
+
+  &-title {
+    color: theme-color(primary);
+    font-size: font-size(m);
+  }
+
+  &-body {
+    flex: 0 0 100%;
+    padding-top: gutter(m);
+    text-align: center;
+    color: theme-color(primary-light);
+  }
+}

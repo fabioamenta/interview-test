@@ -1,0 +1,40 @@
+/*--------------------------------------------------------------
+  # Filters
+  --------------------------------------------------------------*/
+.filters {
+  list-style: none;
+  padding: 0 0 0 gutter(xs);
+  margin: 0;
+
+  .filters {
+    padding-left: gutter(base);
+  }
+
+  .filter {
+    font-size: font-size(s);
+    color: theme-color(tertiary);
+
+    &:first-letter {
+      text-transform: capitalize;
+    }
+
+    [data-toggle="collapse"] {
+      &::before {
+        display: inline-block;
+        margin-right: gutter(xxs);
+        transition: $default-transition;
+      }
+
+      &[aria-expanded="false"]::before {
+        content: "+";
+      }
+
+      &[aria-expanded="true"]::before {
+        content: "-";
+      }
+    }
+    &.active {
+      color: theme-color(primary-highlight);
+    }
+  }
+}

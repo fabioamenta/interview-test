@@ -1,0 +1,11 @@
+/*--------------------------------------------------------------
+  # Navbar
+  --------------------------------------------------------------*/
+[class*="navbar"] {
+  display: flex;
+  align-items: center;
+  flex-flow: row nowrap;
+  .nav-item {
+    white-space: nowrap;
+  }
+}
