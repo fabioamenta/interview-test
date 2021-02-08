@@ -1,18 +1,3 @@
-@mixin abs-center($horizontal: true, $vertical: true) {
-  position: absolute;
-  @if ($horizontal and $vertical) {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  } @else if ($horizontal) {
-    left: 50%;
-    transform: translate(-50%, 0);
-  } @else if ($vertical) {
-    top: 50%;
-    transform: translate(0, -50%);
-  }
-}
-
 /// Mixin to manage responsive breakpoints
 /// @author Hugo Giraudel
 /// @param {String} $breakpoint - Breakpoint name
@@ -29,12 +14,31 @@
   // If the key doesn't exist in the map
   @else {
     @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-        + "Available breakpoints are: #{map-keys($grid-breakpoints)}.";
+        + "Available breakpoints are: #{map-keys($custom-grid-breakpoints)}.";
   }
 }
 
-@mixin button-theme($color, $bg-color) {
-  color: $color;
-  border-color: $color;
-  background-color: $bg-color;
+@mixin make-columns($columns: $grid-columns, $gutter: gutter(base)) {
+  %grid-column {
+    position: relative;
+    width: 100%;
+    padding-right: $gutter;
+    padding-left: $gutter;
+  }
+
+  @if $columns > 0 {
+    @for $i from 1 through $columns {
+      .col-#{$i} {
+        @extend %grid-column;
+        @include screen(lg) {
+          @include make-col($i, $columns);
+        }
+      }
+    }
+  }
+}
+
+@mixin make-col($size, $columns: $grid-columns) {
+  flex: 0 0 percentage($size / $columns);
+  max-width: percentage($size / $columns);
 }

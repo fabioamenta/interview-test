@@ -1,11 +1,19 @@
 /*--------------------------------------------------------------
   # Navbar
   --------------------------------------------------------------*/
-[class*="navbar"] {
+.navbar-nav {
   display: flex;
   align-items: center;
   flex-flow: row nowrap;
+  padding: gutter(base) * 2 0;
   .nav-item {
     white-space: nowrap;
+    a {
+      color: theme-color(secondary);
+      &:hover,
+      &:focus {
+        color: theme-color(highlight);
+      }
+    }
   }
 }

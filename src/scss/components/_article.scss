@@ -1,0 +1,48 @@
+/*--------------------------------------------------------------
+  # Article
+  --------------------------------------------------------------*/
+article {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+
+  @include screen(lg) {
+    flex-direction: row;
+  }
+
+  .#{&}-image {
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .#{&}-content {
+    margin-top: gutter(base) * 2;
+    padding-left: gutter(base);
+    padding-right: gutter(base);
+    @include screen(lg) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+  }
+
+  .#{&}-body {
+    padding: 0 gutter(base);
+    @include screen(lg) {
+      max-width: $article-content-max-width;
+    }
+  }
+
+  .#{&}-category,
+  .#{&}-link {
+    font-size: font-size(xs);
+  }
+
+  .#{&}-title {
+    font-size: font-size(l) !important;
+  }
+}

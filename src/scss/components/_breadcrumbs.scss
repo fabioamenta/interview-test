@@ -1,0 +1,30 @@
+/*--------------------------------------------------------------
+  # Breadcrumbs
+  --------------------------------------------------------------*/
+.breadcrumbs {
+  nav {
+    display: flex;
+    padding: gutter(base) 0;
+  }
+  .breadcrumb-item {
+    font-size: font-size(s);
+    &:not(:last-child) {
+      &::after {
+        content: ">";
+        display: inline-block;
+        margin: 0 0.2rem;
+      }
+    }
+
+    &,
+    a {
+      color: theme-color(breadcrumb-color);
+    }
+    a {
+      &:hover,
+      &:focus {
+        color: theme-color(highlight);
+      }
+    }
+  }
+}

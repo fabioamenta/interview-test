@@ -3,40 +3,37 @@
   --------------------------------------------------------------*/
 .header {
   transition: $default-transition;
-  background-color: theme-color(secondary);
-  box-shadow: 0px 0px 15px -2px rgba(0, 0, 0, 0.5);
-  max-height: none;
+  background-color: theme-color(primary);
   position: relative;
   z-index: 5;
 
-  [class*="container"] {
-    @extend .external-pad;
-    flex: 1 1 auto;
-    justify-content: space-between;
-
-    > .navbar {
-      padding: gutter(s) * 2 0;
-      width: 100%;
+  .navbar-nav {
+    .nav-item {
+      font-size: font-size(m);
     }
   }
 
   .navbar-brand {
-    display: inline-block;
-    flex: 0 0 20%;
-    margin: 0 42%;
+    margin: 0 auto;
     transition: $default-transition;
-    @include screen(lg-p) {
-      flex: 0 0 10%;
-      margin: 0 2vmax 0 0;
-      max-width: $logo-width;
-    }
-    @include screen(xl) {
-      margin: 0 gutter(xxl) 0 0;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     img {
       width: 100%;
       max-height: $logo-height;
+    }
+
+    @include screen(lg) {
+      margin: 0;
+      max-width: $logo-width;
+      justify-content: flex-start;
+
+      img {
+        width: 100%;
+        max-height: $logo-height;
+      }
     }
   }
 
@@ -46,104 +43,16 @@
     }
   }
 
-  .right-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-flow: row nowrap;
-    order: 1;
-    margin: gutter(s) * 2 gutter(l) * 2 gutter(s) * 2 0;
-    @include screen(lg-p) {
-      margin: 0;
-      order: 2;
-    }
-
-    .dropdown-toggle::after {
-      content: none;
-    }
-
-    .nav-item {
-      margin-left: gutter(m);
-      [class^="fa"] {
-        font-size: font-size(l);
-      }
-    }
-  }
-
-  .bottom-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    order: 3;
-    @include screen(lg-p) {
-      display: none;
-    }
-
-    &,
-    .navbar-nav,
-    .extra-info {
-      flex-flow: column wrap;
-      margin-bottom: gutter(s);
-    }
-  }
-
-  .site-search {
-    position: relative;
-    justify-content: flex-end;
-    .form-control {
-      border-radius: 2rem;
-      padding: gutter(xs) gutter(l) gutter(xs) gutter(s);
-      font-size: font-size(base);
-      border-color: theme-color(primary-light);
-      overflow: hidden;
-      transition: $default-transition;
-      width: 100%;
-      @include screen(lg-p) {
-        max-width: 13rem;
-        &:focus {
-          max-width: 100%;
-        }
-      }
-    }
-
-    .btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      right: gutter(xs);
-      height: 100%;
-      font-size: font-size(base);
-      min-width: 0;
-      padding: 0;
-      margin: 0;
-    }
-  }
-
-  .cart {
-    i {
-      position: relative;
-      .badge {
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin-top: -#{gutter(xs)};
-        margin-right: -#{gutter(xs)};
-        padding: gutter(xxs);
-        font-size: font-size(xs);
-        font-family: $font-family-default;
-      }
-    }
-  }
-
   .navbar-toggler {
     $button-bar-height: 4px;
     display: block;
-    @include screen(lg-p) {
+    background-color: transparent;
+    @include screen(lg) {
       display: none;
     }
     position: absolute;
     top: 50%;
-    right: gutter(s) * 2;
+    left: gutter(s) * 2;
     width: 35px;
     height: 22px;
     z-index: 7;
@@ -161,7 +70,7 @@
       position: absolute;
       height: $button-bar-height;
       width: 50%;
-      background-color: theme-color(primary-highlight);
+      background-color: theme-color(secondary);
       opacity: 1;
       transform: rotate(0deg);
       transition: $default-transition;
@@ -252,12 +161,11 @@
     &.open {
       right: 0;
       padding-top: gutter(xxxl);
-      padding-bottom: $toolbar-height;
       z-index: 6;
       overflow: auto;
     }
 
-    @include screen(lg-p) {
+    @include screen(xl) {
       position: static;
       flex-flow: row nowrap;
       justify-content: space-between;
@@ -273,7 +181,7 @@
       margin: gutter(xl) auto;
       order: 2;
       flex: 1 1 auto;
-      @include screen(lg-p) {
+      @include screen(xl) {
         margin: 0;
         order: 2;
         flex: 1 1 auto;
@@ -283,7 +191,7 @@
     > [class*="navbar"] {
       flex-wrap: nowrap;
       flex-direction: column;
-      @include screen(lg-p) {
+      @include screen(xl) {
         flex-direction: row;
       }
     }
@@ -292,7 +200,7 @@
       font-size: font-size(l);
       margin-bottom: gutter(base);
       font-weight: $font-weight-medium;
-      @include screen(lg-p) {
+      @include screen(xl) {
         $min-font-size: font-size(s);
         $max-font-size: font-size(base);
         margin-bottom: 0;

@@ -2,46 +2,46 @@
 # General
 --------------------------------------------------------------*/
 html {
-  font-size: 58%; // 10px
-  @include screen(md) {
-    font-size: 62.5%; // 10px
-  }
+  font-size: 62.5%;
 }
 
-html,
-body {
-  height: 100%;
-}
 body {
   font-family: $font-family-default;
-  font-size: font-size(base); // 15px
-  line-height: line-height(base); // 23px
+  font-size: font-size(base);
+  line-height: line-height(base);
   color: theme-color("text-default");
   background-color: theme-color("default-background");
   font-weight: $font-weight-regular;
+  padding: 0;
+  margin: 0;
 }
 
 a {
+  font-weight: $font-weight-medium;
+  transition: $default-transition;
   & {
-    color: inherit;
+    color: theme-color(highlight);
+    text-decoration: none;
     &:hover,
     &:focus,
     &:active {
       color: theme-color("primary-highlight");
+      outline: none;
     }
   }
 }
 
-a:hover {
-  text-decoration: none;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-title;
+  margin-top: gutter(base) * 2;
+  margin-bottom: gutter(base) * 2;
 }
 
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6,
 h1,
 h2,
 h3,
@@ -51,17 +51,34 @@ h6,
 strong,
 b {
   font-weight: $font-weight-semibold;
+  line-height: line-height(s);
 }
 
-.external-pad {
-  padding-left: gutter(m);
-  padding-right: gutter(m);
-  @include screen(md) {
-    padding-left: gutter(xl);
-    padding-right: gutter(xl);
-  }
+p {
+  margin: 0 0 gutter(base) * 2 0;
 }
 
 .dropdown-toggle::after {
   vertical-align: middle;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+hr {
+  border-color: theme-color(border-color);
+  margin: 0 auto;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }

@@ -8,7 +8,17 @@
   @return map-get($font-sizes, $key);
 }
 
-// Retrieve font-size Sass maps
+// Retrieve line-height Sass maps
 @function line-height($key: "base") {
   @return map-get($lines-height, $key);
+}
+
+// Retrieve color Sass maps
+@function theme-color($key: "primary") {
+  @return map-get($theme-colors, $key);
+}
+
+// Retrieve container-max-width Sass maps
+@function container-max-width($key: "primary") {
+  @return map-get($container-max-widths, $key);
 }

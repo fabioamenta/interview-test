@@ -1,6 +1,39 @@
 /*--------------------------------------------------------------
   # Sidebar
   --------------------------------------------------------------*/
+[class*="container"] {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: gutter(base);
+  padding-left: gutter(base);
+  &:not(.container-fluid) {
+    @include screen(sm) {
+      max-width: container-max-width(sm);
+    }
+    @include screen(md) {
+      max-width: container-max-width(md);
+    }
+    @include screen(lg) {
+      max-width: container-max-width(lg);
+    }
+    @include screen(xl) {
+      max-width: container-max-width(xl);
+    }
+    @include screen(xxl) {
+      max-width: container-max-width(xxl);
+    }
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -(gutter(base));
+  margin-left: -(gutter(base));
+}
+
+@include make-columns();
 
 .grid {
   &-layout {

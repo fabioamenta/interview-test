@@ -12,7 +12,7 @@ input[type="range"] {
   -webkit-appearance: none !important; /*Needed to reset default slider styles */
   width: 100%;
   height: $slider-bar-height;
-  background-color: theme-color(tertiary);
+  background-color: theme-color(primary);
   border-radius: $border-radius-default;
   margin: auto;
   transition: $default-transition;
@@ -20,7 +20,7 @@ input[type="range"] {
     outline: none;
   }
   &:hover {
-    background-color: lighten(theme-color(tertiary), 5%);
+    background-color: lighten(theme-color(primary), 5%);
   }
   &:active + #rangevalue {
     box-shadow: none;

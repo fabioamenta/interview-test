@@ -4,8 +4,6 @@
   "description": "",
   "main": "main.js",
   "dependencies": {
-    "@popperjs/core": "^2.6.0",
-    "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",
     "jquery-sticky": "^1.0.4",
     "scripts": "^0.1.0"
