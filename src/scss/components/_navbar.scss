@@ -5,9 +5,10 @@
   display: flex;
   align-items: center;
   flex-flow: row nowrap;
-  padding: gutter(base) * 2 0;
+  padding: gutter(base) 0;
   .nav-item {
     white-space: nowrap;
+    line-height: 1.25rem;
     a {
       color: theme-color(secondary);
       &:hover,

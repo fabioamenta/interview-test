@@ -26,6 +26,7 @@ $theme-colors: (
   tap-highlight: #000000,
   background-default: #ffffff,
   background-adv: #f2f2f2,
+  background-brands: #070d3c,
   text-default: #070d3c,
   border-color: #e2e4ec,
   highlight: #ed1a2e,
@@ -93,6 +94,9 @@ $products-max-item-xl: 4;
 
 // Article
 $article-content-max-width: 73.6%;
+
+// Brands carousel
+$brands-carousel-item: 3;
 
 // Transitions
 $default-transition: all 0.35s cubic-bezier(0, 0, 0.44, 1.18);

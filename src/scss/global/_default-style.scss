@@ -82,3 +82,10 @@ ul {
   margin: 0;
   list-style: none;
 }
+
+.hideMobile {
+  display: none;
+  @include screen(lg) {
+    display: block;
+  }
+}

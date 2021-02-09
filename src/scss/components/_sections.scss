@@ -22,7 +22,7 @@ section {
     }
   }
 
-  &:not(.article-highlight) {
+  &:not(.brands):not(.article-highlight) {
     text-align: center;
     .article-image,
     .article-content {
@@ -40,7 +40,9 @@ section {
 
   &.article-highlight {
     article {
-      max-width: $article-content-max-width;
+      @include screen(lg) {
+        max-width: $article-content-max-width;
+      }
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -75,10 +77,10 @@ section {
       padding: gutter(base) * 2;
       margin: 0 auto;
     }
-    *:not(.article-category) {
-      .article-link {
-        color: theme-color(primary);
-      }
+
+    .article-link {
+      color: theme-color(primary);
+      text-decoration: underline;
     }
   }
 }

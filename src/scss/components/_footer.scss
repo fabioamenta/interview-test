@@ -5,8 +5,25 @@
   background-color: theme-color(primary);
 
   .navbar-nav {
-    .nav-item {
-      font-size: font-size(m);
+    flex-direction: column;
+    justify-content: center;
+    @include screen(lg) {
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .menu-item {
+      color: theme-color(secondary);
+      &:not(:last-child) {
+        @include screen(lg) {
+          &::after {
+            content: "|";
+            display: inline-block;
+            margin: 0 gutter(base);
+          }
+        }
+      }
+      font-size: font-size(s);
       a {
         color: theme-color(secondary);
         &:hover,
@@ -17,36 +34,26 @@
     }
   }
 
-  .col {
+  .footer-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     @include screen(lg) {
       flex-direction: row;
       justify-content: flex-start;
+      align-items: center;
     }
   }
   .navbar-brand {
-    margin: 0 auto;
-    transition: $default-transition;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+    margin: gutter(base) auto;
     img {
-      width: 100%;
       max-height: $logo-height;
     }
 
     @include screen(lg) {
-      margin: 0;
+      margin: 0 gutter(base) * 2 0 0;
       max-width: $logo-width;
       justify-content: flex-start;
-
-      img {
-        width: 100%;
-        max-height: $logo-height;
-      }
     }
   }
 }
