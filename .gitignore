@@ -106,5 +106,3 @@ typings/
 .sass-cache/
 *.map
 *.db
-dist/css/
-dist/js/
