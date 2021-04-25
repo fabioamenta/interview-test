@@ -106,3 +106,4 @@ typings/
 .sass-cache/
 *.map
 *.db
+dist/.DS_Store
