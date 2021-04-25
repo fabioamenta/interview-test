@@ -38,6 +38,10 @@ h4,
 h5,
 h6 {
   font-family: $font-family-title;
+}
+
+h1,
+h2 {
   margin-top: gutter(base) * 2;
   margin-bottom: gutter(base) * 2;
 }

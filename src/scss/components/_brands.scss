@@ -7,8 +7,6 @@
   color: theme-color(secondary);
   padding: gutter(base) * 2 0;
   margin-bottom: gutter(xl) * 2;
-  overflow-y: visible;
-  overflow-x: hidden;
 
   .article {
     max-width: $article-content-max-width;
@@ -49,10 +47,31 @@
 
   &-carousel {
     max-width: $article-content-max-width;
-    margin: 0 auto calc(-#{gutter(xl) * 2}) auto;
+    margin: 0 auto;
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    padding-bottom: gutter(s);
+  }
+
+    
+  .carousel-container {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto calc(-8rem) auto;
+    position: relative;
+    margin: 0 auto calc(-#{gutter(xl) * 2}) auto;
+    &::before {
+      content: '';
+      display: block;
+      height: 230px;
+    }
   }
 }
 
@@ -69,8 +88,8 @@
     flex: 0 0 $item-width;
     max-width: $item-width;
   }
-  padding: gutter(base) * 2;
-  box-shadow: 2px 0 2px rgba(0, 0, 0, 0.25);
+  padding: gutter(base) * 2 0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .15);
   margin: 0 gutter(base);
   overflow: hidden;
 
@@ -91,25 +110,39 @@
 
   &-logo,
   &-description,
+  &-thumb,
   &-content {
     display: flex;
     width: 100%;
     flex: 0 0 100%;
+    white-space: normal;
   }
 
-  &-logo {
+  &-logo,
+  &-thumb {
     justify-content: center;
     align-items: flex-start;
     img {
       max-width: 100%;
     }
   }
+
+  &-thumb {
+    max-width: 35%;
+    flex: 0 0 35%;
+    overflow: hidden;
+  }
+
   &-description {
     flex-direction: column;
     color: theme-color(text-default);
-    max-width: 80%;
-    flex: 1 1 80%;
-    max-height: 200px;
+    max-width: 50%;
+    flex: 0 0 50%;
+    max-height: 160px;
     overflow: hidden;
+
+    .title h4 {
+      margin-top: 0;
+    }
   }
 }
